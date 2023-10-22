@@ -1,7 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, TouchableOpacity, View, Image, ScrollView, RootTagContext } from 'react-native';
 import { FlatList } from "react-native-web";
+
+import { useNavigation } from "@react-navigation/native";
+
+
 export default function screen1() {
+const navigation = useNavigation();
     
     var data4a=[
         {productName:'Cá nấu lẩu, nấu mì mini...',img:require('../img/ca_nau_lau.png'), shopName:'Devang'},
@@ -38,7 +43,7 @@ export default function screen1() {
   return (
     <View style={styles.container}>
         <View style = {styles.header}>
-            <TouchableOpacity style = {styles.hbtn1}>
+            <TouchableOpacity style = {styles.hbtn1} onPress={()=>{  navigation.navigate("Screen2");}}>
                 <Image style = {styles.himgbtn1} source={require('../img/ant-design_arrow-left-outlined.png')}></Image>
             </TouchableOpacity>
             <Text style = {styles.hTitle}>Chat</Text>
